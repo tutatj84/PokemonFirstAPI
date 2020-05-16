@@ -12,8 +12,8 @@ let getPokemonById = async id => {
             document.getElementById("pokeImg").src = "https://pokeres.bastionbot.org/images/pokemon/" + id + ".png"
             setTimeout(() => {
                 document.getElementById("pokeImg").addEventListener("click", getData);
+                document.getElementById("pokeName").innerText = data.name;
             }, 0);
-            document.getElementById("pokeName").innerText = data.name;
             console.log(data);
         })
 
