@@ -9,8 +9,10 @@ let getPokemonById = async id => {
         let data = await resJson;
 
         resJson.then(() => { //check when load data success to allow user to click
-            document.getElementById("pokeImg").addEventListener("click", getData)
             document.getElementById("pokeImg").src = "https://pokeres.bastionbot.org/images/pokemon/" + id + ".png"
+            setTimeout(() => {
+                document.getElementById("pokeImg").addEventListener("click", getData);
+            }, 0);
             document.getElementById("pokeName").innerText = data.name;
             console.log(data);
         })
